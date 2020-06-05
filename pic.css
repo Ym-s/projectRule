@@ -1,0 +1,100 @@
+/*
+ *	作者: zby
+ *	创建时间：
+ *	描述：图片比例组件
+ */
+
+@charset "utf-8";
+
+.pic-one {
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+}
+
+.pic-two {
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+}
+
+.pic-one .noPicture {
+    width: 120px;
+    height: 120px;
+    background: #EFEFEF;
+    border: 1px solid #C0C0C0;
+    color: #999999;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pic-one img {
+    width: 120px;
+    height: 120px;
+}
+
+.pic-two img {
+    width: 64px;
+    height: 64px;
+}
+
+.pic-two .noPicture {
+    width: 64px;
+    height: 64px;
+    background: #EFEFEF;
+    border: 1px solid #C0C0C0;
+    color: #999999;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*
+ *	作者: ym
+ *	创建时间：20203/27
+ *	描述：图片比例组件
+ */
+.picPicture {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    border: 1px dashed #C0C0C0;
+}
+
+.pic-three {
+    width: 120px;
+    height: 120px;
+    background: #EFEFEF;
+    color: #999999;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.picPicture .cancel {
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    background: #000;
+    color: #ffff;
+    opacity: 0.5;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+    z-index: -1;
+}
+
+.pic-three img {
+    width: 120px;
+    height: 120px;
+}

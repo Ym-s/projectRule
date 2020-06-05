@@ -1,0 +1,465 @@
+/*
+ *	作者: zzy
+ *	创建时间：
+ *	描述：公共
+ */
+
+@charset "utf-8";
+
+/* 布局 */
+@import url('component/layout.css');
+/* 按钮 */
+@import url('component/button.css');
+/* 选项卡 */
+@import url('component/tab.css');
+/* 文本域 */
+@import url('component/input.css');
+/* 搜索 */
+@import url('component/search.css');
+/* 面包屑 */
+@import url('component/breadcrumb.css');
+/* 复选框 */
+@import url('component/checkbox.css');
+/* 标签 */
+@import url('component/lable.css');
+/* 图片比例 */
+@import url('component/pic.css');
+/* 法规提示 */
+@import url('component/rule.css');
+/* 数据表格 */
+@import url('component/table.css');
+/* 下拉 */
+@import url('component/select.css');
+/* 弹窗 */
+@import url('component/popup.css');
+/* 日期选择 */
+@import url('component/date.css');
+/* 富文本编辑器 */
+@import url('component/layedit.css');
+/* 徽章 */
+@import url('component/badge.css');
+/* 总览 */
+@import url('component/overview.css');
+/*
+ * 标签重定义
+ */
+
+html {
+    background-color: rgb(237, 237, 237);
+    line-height: 1.5;
+}
+
+iframe {
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+
+em {
+    font-style: normal;
+}
+
+/* 主体内容 */
+.layui-body {
+    overflow: visible;
+}
+
+.layui-side-scroll {
+    width: 200px;
+}
+
+.layui-layout-admin .layui-footer {
+    background-color: #fff;
+    left: 200px;
+    height: 30px;
+    padding: 10px 30px;
+}
+
+body.large .layui-body {
+    left: 210px;
+}
+
+body.small .layui-body {
+    left: 70px;
+}
+
+body.small .breadcrumb-container,
+body.small .layui-layout-admin .layui-footer {
+    left: 60px;
+}
+
+.layui-layout-admin .layui-body {
+    top: 100px;
+    bottom: 60px;
+    right: 10px;
+    background-color: #fff;
+    overflow: auto;
+}
+
+/* 底部 */
+.layui-layout-admin .layui-footer {
+    padding: 11px 15px;
+    line-height: normal;
+    height: auto;
+    background-color: #FFF;
+    z-index: 9999;
+}
+
+/* 左侧导航 */
+body.large .layui-side.large {
+    width: 200px;
+}
+
+body.small .layui-side.small {
+    width: 60px;
+}
+
+.layui-nav .layui-this:after,
+.layui-nav-bar,
+.layui-nav-tree .layui-nav-itemed:after,
+.layui-nav .layui-nav-child dd.layui-this a,
+.layui-nav-child dd.layui-this {
+    background-color: #f05654;
+}
+
+.layui-bg-black {
+    background-color: #262A35 !important;
+}
+
+.layui-layout-admin .layui-side {
+    top: 50px;
+}
+
+.layui-nav-tree .layui-nav-bar {
+    width: 0;
+}
+
+.layui-nav-tree .layui-nav-item a {
+    height: 50px;
+    line-height: 50px;
+}
+
+.layui-nav-tree .layui-nav-item dl dd a {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 50px;
+}
+
+.layui-nav-tree .layui-nav-item a:hover {
+    background-color: #313644;
+}
+
+.layui-nav-tree .layui-nav-child dd.layui-this,
+.layui-nav-tree .layui-nav-child dd.layui-this a,
+.layui-nav-tree .layui-this,
+.layui-nav-tree .layui-this>a,
+.layui-nav-tree .layui-this>a:hover {
+    background-color: #F05654;
+}
+
+.layui-nav .layui-nav-item a {
+    padding: 0 21px;
+}
+
+.layui-layout-admin .layui-side .icon {
+    font-size: 18px;
+}
+
+/* 左侧导航收起 */
+.layui-side.small {
+    overflow: visible;
+}
+
+.layui-side.small .layui-nav {
+    padding: 0;
+    width: 60px;
+}
+
+.layui-side.small .layui-nav .layui-this:after,
+.layui-side.small .layui-nav-bar,
+.layui-side.small .layui-nav-tree .layui-nav-itemed:after {
+    height: 0;
+}
+
+.layui-side.small .layui-nav .layui-nav-more {
+    display: none;
+}
+
+.layui-side.small .layui-nav-child {
+    left: 60px;
+    top: 0;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: transparent;
+    box-shadow: none;
+    min-width: 140px;
+    text-align: center;
+}
+
+.layui-side.small .layui-nav-child::after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 2px;
+    top: 20px;
+    border-right: 6px solid #262A35;
+    border-left: none;
+    border-bottom: 6px solid transparent;
+    border-top: 6px solid transparent;
+}
+
+.layui-side.small .layui-nav-child dd {
+    background-color: #262A35;
+    height: 45px;
+    line-height: 45px;
+}
+
+.layui-side.small .layui-nav .layui-nav-child a {
+    color: #fff;
+}
+
+.layui-side.small .layui-nav .layui-nav-child a:hover {
+    background-color: #F05654;
+}
+
+.layui-side.small .layui-nav .layui-nav-child dd.layui-this a,
+.layui-side.small .layui-nav-child dd.layui-this {
+    background-color: #F05654;
+}
+
+/* 头部导航 */
+.layui-header {
+    background-color: #262A35;
+    height: 50px;
+}
+
+.layui-nav {
+    background-color: #262A35;
+}
+
+.layui-nav .layui-nav-item {
+    line-height: 50px;
+}
+
+.layui-nav-child {
+    top: 55px;
+}
+
+.layui-layout-right .icon {
+    font-size: 18px;
+}
+
+.layui-layout-admin .layui-logo {
+    z-index: 1001;
+    line-height: 50px;
+    height: 50px;
+    background-color: #31384B;
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.layui-layout-admin .layui-logo .foldAction {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: -50px;
+    cursor: pointer;
+    text-align: center;
+    top: 0;
+}
+
+.layui-layout-admin .layui-logo .foldAction .layui-icon {
+    display: none;
+}
+
+.layui-layout-admin .layui-logo .foldAction .layui-icon {
+    font-size: 20px;
+}
+
+/* 左侧导航展开隐藏 */
+body.large .layui-layout-admin .layui-logo .foldAction .layui-icon-shrink-right {
+    display: block;
+}
+
+body.small .layui-layout-admin .layui-logo .foldAction .layui-icon-spread-left {
+    display: block;
+}
+
+body.small .layui-layout-admin .layui-logo {
+    width: 60px;
+}
+
+body.small .layui-layout-admin .layui-logo .slogan {
+    display: none;
+}
+
+body .layui-side {
+    display: none;
+}
+
+body.small .layui-side.small {
+    display: block;
+}
+
+body.large .layui-side.large {
+    display: block;
+}
+
+/* 徽章 */
+.layui-nav .layui-badge,
+.layui-nav .layui-badge-dot {
+    right: 0;
+}
+
+/* 颜色 */
+
+.main-color {
+    color: #f05654;
+}
+
+.sub1-color {
+    color: #54ACF0;
+}
+
+.sub2-color {
+    color: #262A35;
+}
+
+.sub3-color {
+    color: #EEF7FD;
+}
+
+.decor1-color {
+    color: #F0B354;
+}
+
+.decor2-color {
+    color: #54F075;
+}
+
+.txt1-color {
+    color: #333333;
+}
+
+.txt2-color {
+    color: #666666;
+}
+
+.txt3-color {
+    color: #999999;
+}
+
+.disable-color {
+    color: #cccccc;
+}
+
+.table-br-color {
+    color: #E3E3E3;
+}
+
+.table-head-color {
+    color: #F0F0F0;
+}
+
+.background-color {
+    color: #efefef;
+}
+
+.block-color {
+    color: #fff;
+}
+
+/* 字体图标 */
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.2em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+/********** 公用类名 ***********/
+/* 行内元素 */
+.display-inline {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+/* 清除浮动 */
+.clear-float::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+
+/* 手型 */
+.cur-p {
+    cursor: pointer;
+}
+
+/* 浮左 */
+.float-left {
+    float: left;
+}
+
+/* 浮右 */
+.float-right {
+    float: right;
+}
+
+.layui-btn+.layui-btn {
+    margin-left: 0;
+}
+
+/* 提示隐藏 */
+.msg {
+    opacity: 0;
+}
+
+
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+    width: 0px;
+    height: 10px;
+}
+
+::-ms-scrollbar {
+    width: 0px;
+    height: 0;
+}
+
+::scrollbar[orient="vertical"] {
+    min-width: 0px !important;
+}
+
+/* 滚动条的滑轨背景颜色 */
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+/* 滑块颜色 */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .15);
+}
+
+/* 滑轨两头的监听按钮颜色 */
+::-webkit-scrollbar-button {
+    height: 0;
+    background-color: rgba(0, 0, 0, .05);
+}
+
+/* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+::-webkit-scrollbar-corner {
+    background-color: black;
+}
