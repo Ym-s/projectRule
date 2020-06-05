@@ -16,27 +16,34 @@
 
 		menu#anchor {
 			position: fixed;
-			width: 100px;
-			text-align: center;
+			width: 130px;
+			text-align: right;
 			left: 0;
 			top: 0;
 			bottom: 0;
 			overflow: auto;
-			background-color: #fff;
-			z-index: 1002;
-			padding: 10px;
+			background-color: #355873;
+			color: #fff;
+			z-index: 999;
 			box-sizing: border-box;
 			font-size: 15px;
-			box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+			margin: 0;
+			padding: 70px 10px 10px 10px;
 		}
 
 		#anchor a {
 			display: block;
-			padding: 12px 0;
+			padding: 8px 0;
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		#anchor a.active,
+		#anchor a:hover {
+			color: rgba(255, 255, 255, 1);
 		}
 
 		section {
-			margin-left: 120px;
+			margin-left: 140px;
 			padding-bottom: 80px;
 		}
 
@@ -61,21 +68,54 @@
 		header#header {
 			position: fixed;
 			text-align: center;
-			height: 50px;
-			line-height: 50px;
+			height: 60px;
+			line-height: 60px;
 			font-size: 16px;
 			top: 0;
-			padding-left: 100px;
+			padding-left: 120px;
 			width: 100%;
 			box-sizing: border-box;
-			background-color: #fff;
+			background-color: #355873;
+			color: #fff;
 			z-index: 1001;
-			box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+		}
+
+		header#header .logo {
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-size: 15px;
+			line-height: 20px;
+			background-color: #203e55;
+			width: 130px;
+			height: 60px;
+		}
+
+		header#header .logo .txt1 {
+			padding-top: 10px;
+		}
+
+		header#header .logo .txt2 {
+			font-size: 13px;
+		}
+
+		header#header .tab {
+			color: rgba(255, 255, 255, .5);
+		}
+
+		header#header .tab a {
+			color: rgba(255, 255, 255, .5);
+			padding: 0 20px;
+		}
+
+		header#header .tab a:hover,
+		header#header .tab a.active {
+			color: rgba(255, 255, 255, 1);
 		}
 	</style>
 </head>
 
-<body y>
+<body>
 
 	<menu id="anchor">
 		<a href="#frame">框架</a>
@@ -98,7 +138,17 @@
 		<a href="#badge">徽章</a>
 		<a href="#layedit">富文本编辑器</a>
 	</menu>
-	<header id="header">火把知识后台-基于layui框架-前端开发规范手册</header>
+	<header id="header">
+		<div class="logo">
+			<div class="txt1">火把知识</div>
+			<div class="txt2">前端开发规范手册</div>
+		</div>
+		<div class="tab">
+			<a href="#" class="active">后台</a>
+			<span>/</span>
+			<a href="/mobile.html">前台</a>
+		</div>
+	</header>
 	<section>
 		<article id="frame">
 			<p class="title">
@@ -403,6 +453,20 @@
 			<div class="rule">
 				请您遵守国家相关规定，切勿上传低俗色情、暴力恐怖、谣言诈骗、侵权盗版等相关内容，火把保有依据国家规定及平台规则进行处理的权利。
 			</div>
+			<div class="prompt-order">
+				<div class='prompt-order-left'>
+					<p class="sub1-color current-status">待成团</p>
+					<p>将于2020-05-06 23:59:59截至成团</p>
+				</div>
+				<div class='prompt-order-right'>
+					<span>实物</span>
+					<span>代发</span>
+					<span>团购</span>
+					<span>包邮</span>
+					<span>赠送</span>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
 		</article>
 		<article id="pic">
 			<p class="title">
@@ -432,25 +496,24 @@
 			</div>
 			<!-- /*
 			* 作者: ym
-			* 创建时间：2020/3/7
+			* 创建时间：2020/3/27
 			* 描述：图片比例组件
-			*/ --> 
-			
+			*/ -->
 			<div class="picPicture" style="margin: 10px 0;">
 				<div class="pic-three">
 					<div class="noPicture">
 						点击上传
 					</div>
-					<div class="cancel">
-						点击删除
-					</div>
+				</div>
+				<div class="cancel">
+					点击删除
 				</div>
 			</div>
 		</article>
 		<article>
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
-					<use xlink:href="#iconguanlian"></use>  
+					<use xlink:href="#iconguanlian"></use>
 				</svg>固定底部按钮</p>
 			<div class="layui-footer">
 				<button class="layui-btn">保存并提交</button>
@@ -956,9 +1019,369 @@
 					</tfoot>
 				</table>
 			</div>
+			<!-- 数据表格5 -->
+			<div class="table">
+				<table class="layui-table" style="table-layout:fixed;margin:0;">
+					<colgroup>
+						<col width="15%">
+						<col width="25%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="30%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th style="text-align:left;border-right: 1px solid #f2f2f2;">商品ID/外部商品ID</th>
+							<th style="text-align:left;border-right: 1px solid #f2f2f2;">商品信息</th>
+							<th style="text-align:left;border-right: 1px solid #f2f2f2;">促销价</th>
+							<th style="text-align:left;border-right: 1px solid #f2f2f2;">实付价</th>
+							<th style="text-align:left;border-right: 1px solid #f2f2f2;">数量</th>
+							<th style="text-align:left;">
+								商品总价
+								<svg class="icon tableIcon" aria-hidden="true">
+									<use xlink:href="#iconicon-tips-line"></use>
+								</svg>
+								<div class="tableIcon-content">
+									<div class="tableIcon-block">我是总成本我是总成本我是总成本我是总成本我是总成本我是总成本我是总成本
+									</div>
+									<div class="tableIcon-hover-arrow"></div>
+								</div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="6" class="bgColorBlue">
+								<div class="layui-inline">
+									<div class="layui-inline marg-20">包裹1</div>
+									<div class="layui-inline marg-20">已发货</div>
+									<div class="layui-inline marg-28">德邦物流:123654789</div>
+									<div class="layui-inline click-color">查看物流</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="textOverflow" style="text-align:left;">
+								1002545585/2348900078665
+								<div class="blurs">
+									ZHR002
+								</div>
+							</td>
+							<td class="tableTitle">
+								<div class="pic-two">
+									<img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
+										alt="">
+								</div>
+								<div class="layui-inline message">
+									<p class="textTwoOver" title="">商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行行最多两行最多两行</p>
+								</div>
+							</td>
+							<td style="text-align:left;">￥12.55</td>
+							<td style="text-align:left;">￥12.55</td>
+							<td style="text-align:left;">55</td>
+							<td>
+								<div class="goodNum">
+									<div class="goodPrice">￥12.55</div>
+									<div class="goodState">退款中</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="6" class="bgColorBlue">
+								<div class="layui-inline">
+									<div class="layui-inline marg-20">包裹2</div>
+									<div class="layui-inline marg-20">待发货</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="textOverflow" style="text-align:left;">
+								1002545585/2348900078665
+								<div class="blurs">
+									ZHR002
+								</div>
+							</td>
+							<td class="tableTitle">
+								<div class="pic-two">
+									<img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
+										alt="">
+								</div>
+								<div class="layui-inline message">
+									<p class="textTwoOver" title="">商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行行最多两行最多两行</p>
+								</div>
+							</td>
+							<td style="text-align:left;">￥12.55</td>
+							<td style="text-align:left;">￥12.55</td>
+							<td style="text-align:left;">55</td>
+							<td>
+								<div class="goodNum">
+									<div class="goodPrice">￥12.55</div>
+									<div class="goodState">退货退款中</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="6">
+								<div class="teari">
+									<div class="mgt-5">
+										<div class="layui-inline w75">商品总价</div>
+										<div class="layui-inline w80">¥84.90</div>
+									</div>
+									<div class="mgt-5">
+										<div class="layui-inline w75">活动立减</div>
+										<div class="layui-inline w80">-¥10.00</div>
+									</div>
+									<div class="mgt-5">
+										<div class="layui-inline w75">优惠劵</div>
+										<div class="layui-inline w80">-¥10.00</div>
+									</div>
+									<div class="mgt-5">
+										<div class="layui-inline w75">运费</div>
+										<div class="layui-inline w80">-¥10.00</div>
+									</div>
+									<div class="mgt-5 col14">
+										<div class="layui-inline w75">订单总价</div>
+										<div class="layui-inline w80">¥84.90</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+
+			<!-- *	作者: ym
+			*	创建时间：2020/04/07
+			*	描述：数据表格组件 -->
+			<!-- 数据表格6 -->
+			<div class="table table6">
+				<table class="layui-table" style="table-layout:fixed;margin:0;">
+					<colgroup>
+						<col width="6%">
+						<col width="3%">
+						<col width="5%">
+						<col width="3%">
+						<col width="5%">
+						<col width="3%">
+						<col width="5%">
+						<col width="3%">
+						<col width="35%">
+					</colgroup>
+					<tbody>
+						<tr>
+							<td colspan="6" class="report-forms-time">
+								<span>2020年03月收支情况报表</span> <span class="serial-number">1077202003</span><span
+									class="time">2020年04月02日 03:15:15</span>
+							</td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars ">
+							<td>iOS余额上期结余</td>
+							<td></td>
+							<td>iOS余额充值</td>
+							<td></td>
+							<td>iOS余额退款</td>
+							<td></td>
+							<td>iOS余额消费</td>
+							<td></td>
+							<td>iOS余额当期结余</td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars">
+							<td class="last-month-balance">10000.00</td>
+							<td>+</td>
+							<td class="recharge-of-balance">203.00</td>
+							<td>+</td>
+							<td class="refund-of-balance">530.00</td>
+							<td>-</td>
+							<td class="surplus-consumption">120.00</td>
+							<td>=</td>
+							<td class="balance-this-month">1234.00</td>
+						</tr>
+						<tr>
+							<td class="padd-10"></td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars marg-top20">
+							<td>Android余额上期结余</td>
+							<td></td>
+							<td>Android余额充值</td>
+							<td></td>
+							<td>Android余额退款</td>
+							<td></td>
+							<td>Android余额消费</td>
+							<td></td>
+							<td>Android余额当期结余</td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars">
+							<td class="last-month-balance">10000.00</td>
+							<td>+</td>
+							<td class="recharge-of-balance">203.00</td>
+							<td>+</td>
+							<td class="refund-of-balance">530.00</td>
+							<td>-</td>
+							<td class="surplus-consumption">120.00</td>
+							<td>=</td>
+							<td class="balance-this-month">1234.00</td>
+						</tr>
+						<tr>
+							<td class="padd-10"></td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars marg-top20">
+							<td></td>
+							<td></td>
+							<td>支付宝充值</td>
+							<td></td>
+							<td>支付宝退款</td>
+							<td></td>
+							<td>支付宝消费</td>
+							<td></td>
+							<td>支付宝当期变动</td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars">
+							<td class="last-month-balance"></td>
+							<td></td>
+							<td class="recharge-of-balance">203.00</td>
+							<td>+</td>
+							<td class="refund-of-balance">530.00</td>
+							<td>-</td>
+							<td class="surplus-consumption">120.00</td>
+							<td>=</td>
+							<td class="balance-this-month">1234.00</td>
+						</tr>
+						<tr>
+							<td class="padd-10"></td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars marg-top20">
+							<td></td>
+							<td></td>
+							<td>微信充值</td>
+							<td></td>
+							<td>微信退款</td>
+							<td></td>
+							<td>微信消费</td>
+							<td></td>
+							<td>微信当期变动</td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars">
+							<td class="last-month-balance"></td>
+							<td></td>
+							<td class="recharge-of-balance">203.00</td>
+							<td>+</td>
+							<td class="refund-of-balance">530.00</td>
+							<td>-</td>
+							<td class="surplus-consumption">120.00</td>
+							<td>=</td>
+							<td class="balance-this-month">1234.00</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- *	作者: ym
+			*	创建时间：2020/04/07
+			*	描述：数据表格组件 -->
+			<!-- 数据表格7 -->
+			<div class="table table7">
+				<table class="layui-table" style="table-layout:fixed;margin:0;">
+					<colgroup>
+						<col width="35%">
+						<col width="15%">
+						<col width="25%">
+						<col width="12%">
+						<col width="12%">
+					</colgroup>
+
+					<tbody>
+						<tr>
+							<td colspan='6' class='bgColorBlue'>
+								<div class='layui-inline'>
+									<div class='layui-inline marg-50'>订单号：1912181503432172</div>
+									<div class='layui-inline marg-50'>订单时间：2018-05-04 14:23:22</div>
+									<div class='layui-inline marg-50'>下单用户：15077778989</div>
+									<div class='layui-inline'>售货来源：火把号名称（商户名称）</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class='tableTitle'>
+								<div class='pic-imgs pic-img4'>
+									<div class='pic-two'>
+										<img src='https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50'
+											alt=''>
+									</div>
+									<div class='pic-two'>
+										<img src='https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50'
+											alt=''>
+									</div>
+									<div class='pic-two'>
+										<img src='https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50'
+											alt=''>
+									</div>
+									<div class='pic-two'>
+										<img src='https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50'
+											alt=''>
+									</div>
+									<div class='layui-inline product-title'>
+										<P class='textTwoOver' title=''>商品标题商品标题商品标题商品标题 <span>￥15.88 x2</span></p>
+										<P class='textTwoOver' title=''>商品标题商品标题商品标题商品标题 <span>￥15.88 x2</span></p>
+										<P class='textTwoOver' title=''>商品标题商品标题商品标题商品标题 <span>￥15.88 x2</span></p>
+										<p class='textTwoOver' title=''>商品标题商品标题商品标题商品标题 <span>￥15.88 x2</span></p>
+										<p class='quantity-of-commodities' title=''>
+											共 <span class='main-color'>4</span>个品种，
+											<span class='main-color'>23</span> 个商品
+										</p>
+									</div>
+
+
+									<div style='clear: both;'></div>
+							</td>
+							<td style='text-align:center;'>
+								<div class='order-amount txt3-color'>
+									订单金额
+								</div>
+								<div class='amount-of-money'>
+									￥1234567.66
+									<p class="txt3-color">(含运费￥10.00)</p>
+								</div>
+							</td>
+							<td style='text-align:center;'>
+								<div class='receiving-address txt3-color'>
+									收货地址
+								</div>
+								<div class='address'>
+									<p>郭小二</p>
+									浙江省杭州市余杭区金家渡南路三号博库网络有限公司
+								</div>
+							</td>
+							<td style='text-align:center;'>
+								<span class="layui-badge-dot layui-bg-orange"></span> 待付款
+							</td>
+							<td style='text-align:center;'>
+								<a href='javacript:;' class='sub1-color deliver-goods'>发货</a>
+								<a href='javacript:;' class='sub1-color see' style="margin-right: 15px;">详情</a>
+								<a href='javacript:;' class='sub1-color remarks'>备注</a>
+							</td>
+						</tr>
+
+					</tbody>
+					<tfoot style="border-top: 1px solid #EEF7FD;">
+						<tr>
+							<td colspan="7">
+								<div class='layui-inline marg-20'>
+									<span class='layui-badge-rim label'>实物</span>
+									<span class='layui-badge-rim label'>自营</span>
+									<span class='layui-badge-rim label'>代发</span>
+									<span class='layui-badge-rim label'>优惠券</span>
+								</div>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+
+			</div>
 		</article>
-		<article id="popup">
-			<p class="title">
+		<article id='popup'>
+			<p class='title'>
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>弹窗</p>
@@ -971,10 +1394,19 @@
 				<span id="popup5" class="popup">弹窗5</span>
 				<span id="popup6" class="popup">弹窗6</span>
 				<span id="popup7" class="popup">弹窗7</span>
+				<span id="popup8" class="popup">弹窗8</span>
+				<span id="popup9" class="popup">弹窗9</span>
+				<span id="popup10" class="popup">弹窗10</span>
+				<span id="popup11" class="popup">弹窗11</span>
+				<span id="popup12" class="popup">弹窗12</span>
+				<span id="popup13" class="popup">弹窗13</span>
+				<span id="popup14" class="popup">弹窗14</span>
+				<span id="popup16" class="popup">弹窗15</span>
+				<span id="popup17" class="popup">弹窗16</span>
 				<span id="msg" class="popup">弹窗msg</span>
 				<span id="confirm" class="popup">弹窗confirm</span>
 				<span id="alert" class="popup">弹窗alert</span>
-
+				<span id="popup15" class="popup">弹窗二维码</span>
 			</div>
 		</article>
 		<article id="date">
@@ -995,7 +1427,7 @@
 					<span></span>
 					<input type="text" class="layui-input test3" placeholder="结束时间">
 				</div>
-				</divc>
+			</div>
 		</article>
 		<article id="badge">
 			<p class="title">
@@ -1034,9 +1466,10 @@
 	var dataResult = {};
 
 	//初始化layui
-	layui.use(['element', 'laydate', 'layedit', 'layer', 'form', 'upload'], function () {
+	layui.use(['element', 'laydate', 'table', 'layedit', 'layer', 'form', 'upload'], function () {
 		var element = layui.element,
 			form = layui.form,
+			table = layui.table,
 			layedit = layui.layedit,
 			laydate = layui.laydate,
 			$ = layui.$;
@@ -1134,7 +1567,6 @@
 			]
 		});
 
-
 		//时间弹窗
 		$("#popup4").click(function () {
 			//页面层需要引入日期插件
@@ -1202,6 +1634,421 @@
 		})
 
 
+		//弹窗8
+		$("#popup8").click(function () {
+			layer.open({
+				type: 1,
+				title: '发货物流确认', //title设置
+				skin: 'layui-layer-rim', //加上边框
+				content: "<div class='popup8-content'>" +
+					"<div class='selectTwo'> " +
+					" <form class='layui-form' action=''> " +
+					"<select name='city' lay-verify='required' class='select-sizeMin'> " +
+					"<option value=''> 请选择物流方式 </option>" +
+					"<option value='0'> 1 </option>" +
+					"<option value='1'>2</option>" +
+					"</select>" +
+					"</form>" +
+					"</div>" +
+					"<div class='input-second-container'>" +
+					"<input type='text' name='title' placeholder='请输入物流单号' autocomplete='off' class='layui-input'>" +
+					"<div class='input-number'>" +
+					"<span class='input-on-number'>0</span>/" +
+					"<span class='input-max-number'>100" +
+					"</span>" +
+					"</div>" +
+					"</div>" +
+					"<p style='text-align: left;color: #999999;'>请注意，填写后无法修改</p>" +
+					"</div>",
+				btn: [' 确定', '取消'],
+				area: ['520px', '298px'], //宽高
+				success: function (data) {
+					$(".layui-layer-page").addClass('popup8');
+					$(".popup9 .layui-layer-title").show();
+					form.render();
+				},
+				yes: function (index, layero) {
+					//按钮1回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					// layer.closeAll();
+					layer.msg("sss")
+				},
+				btn2: function (index, layero) {
+					//按钮2回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					// return false //开启该代码可禁止点击该按钮关闭
+				}
+			});
+		})
+
+
+		//弹窗9 
+		$("#popup9").click(function () {
+			//页面层
+			layer.open({
+				type: 1,
+				title: '修改收货信息', //title设置
+				skin: 'layui-layer-rim', //加上边框
+				btn: ['确定', '取消'], //btn按钮
+				area: ['520px', '464px'], //宽高 
+				content: "<div class='popup9-content'>" +
+					"<div class='location'> " +
+					"<p> " +
+					"确认将以下勾选商品发送至：  " +
+					"</p>" +
+					"<p class='detailed-address'>" +
+					"浙江省杭州市余杭区金家渡南路3号，郭小二，18965895899" +
+					"</p>" +
+					"</div>" +
+					"<div class='selected'>" +
+					"<p>已选中<span class='main-color been-selected'>0</span>件商品<a class='sub1-color reselection' href='javascript:;'>重选</a></p>" +
+					"</div>" +
+					"<div class='table'>" +
+					"<table class='layui-table' style='table-layout:fixed;margin:0;'>" +
+					"<colgroup>" +
+					"<col width='6%'>" +
+					"<col width='50%'>" +
+					"<col width='10%'>" +
+					"</colgroup>" +
+					"<tbody class='tbody-content'>" +
+					"</tbody>" +
+					"</table>" +
+					"</div>" +
+					"</div>", //内容
+				// shadeClose: true, //点击遮罩层隐藏弹窗
+				// move: false, //禁止拖拽
+				success: function (data) {
+					$(".layui-layer-page").addClass('popup9');
+					$(".popup9 .layui-layer-title").show();
+					var $html;
+					for (let i = 0; i < 20; i++) {
+						$html += "<tr>";
+						$html += "<td>";
+						$html += "<form class='layui-form' action=''>";
+						$html +=
+							"<input type='checkbox' name='item_id' value='' lay-skin='primary' class='test' lay-filter='checkChild'>";
+						$html += "</form>";
+						$html += "</td>";
+						$html +=
+							"<td class='textOverflow' style='text-align:left;'>1002545585/234890007866525</td>";
+						$html += "<td class='tableTitle'>";
+						$html += "X 333";
+						$html += "</td>";
+						$html += "</tr>";
+						$('.tbody-content').html($html);
+					}
+
+					form.on('checkbox(checkChild)', function (data) {
+						// console.log(data.elem); //得到checkbox原始DOM对象
+						// console.log(data.elem.checked); //是否被选中，true或者false
+						// console.log(data.value); //复选框value值，也可以通过data.elem.value得到
+						// console.log(data.othis); //得到美化后的DOM对象
+						$('.been-selected').text($("input[name='item_id']:checked")
+							.length);
+					})
+
+					$(".reselection").click(function () {
+						console.log($(" .popup9 input[name='item_id']:checked").val());
+						$(".popup9 input[name='item_id']:checked").prop('checked',
+							false);
+						$('.layui-form-checked').removeClass('layui-form-checked');
+						$('.been-selected').text("0");
+
+					})
+					form.render();
+				},
+				yes: function (index, layero) {
+					//按钮1回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					layer.msg('sss')
+				},
+				btn2: function (index, layero) {
+					//按钮2回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					//return false 开启该代码可禁止点击该按钮关闭
+				}
+			});
+		})
+
+		//弹窗10
+		$("#popup10").click(function () {
+			layer.open({
+				title: '物流',
+				content: "<div class='popup10-content'>" +
+					"<div class='logistics'>" +
+					"<p>物流公司：圆通快递</p>" +
+					"<p class='waybill-no'>运单号：1234567899  </p>" +
+					"</div>" +
+					"<div class='location'> " +
+					"<ul class='layui-timeline'>" +
+					" <li class='layui-timeline-item'>" +
+					"<i class='layui-icon layui-timeline-axis'>&#xe63f;</i>" +
+					"<div class='layui-timeline-content layui-text'>" +
+					" <p>【杭州市】在官网“运单资料&签收图”，可查看签收人信息查看签收人信息请勿相信任何人给您发来的可以退款的链接，以免钱款被骗</p>" +
+					"  <p> 2019.03.12  17:33:50" +
+					"</p>" +
+					"</div>" +
+					" </li>" +
+					"<li class='layui-timeline-item'>" +
+					"  <i class='layui-icon layui-timeline-axis'>&#xe63f;</i>" +
+					"<div class='layui-timeline-content layui-text'>" +
+					" <p>【杭州市】在官网“运单资料&签收图”，可查看签收人信息查看签收人信息请勿相信任何人给您发来的可以退款的链接，以免钱款被骗</p>" +
+					"  <p> 2019.03.12  17:33:50" +
+					" </div>" +
+					"</li>" +
+					"<li class='layui-timeline-item'>" +
+					"<i class='layui-icon layui-timeline-axis'>&#xe63f;</i>" +
+					"<div class='layui-timeline-content layui-text'>" +
+					"<div class='layui-timeline-title'>过去</div>" +
+					"</div>" +
+					"</li>" +
+					" </ul>" +
+					"</div>" +
+					"</div>",
+				btn: ['关闭'],
+				area: ['520px', '668px'], //宽高
+				success: function (data) {
+					$(".layui-layer-dialog").addClass('popup10');
+					$(".popup10 .layui-layer-title").show();
+					$(".popup10 .layui-layer-title").html($(this).text())
+					form.on('checkbox(checkChild)', function (data) {
+						// console.log(data.elem); //得到checkbox原始DOM对象
+						// console.log(data.elem.checked); //是否被选中，true或者false
+						// console.log(data.value); //复选框value值，也可以通过data.elem.value得到
+						// console.log(data.othis); //得到美化后的DOM对象
+						$('.been-selected').text($("input[name='item_id']:checked")
+							.length);
+					})
+
+					$(".reselection").click(function () {
+						console.log($(" .popup9 input[name='item_id']:checked").val());
+						$(".popup9 input[name='item_id']:checked").prop('checked',
+							false);
+						$('.layui-form-checked').removeClass('layui-form-checked');
+						$('.been-selected').text("0");
+
+					})
+					form.render();
+				},
+				yes: function (index, layero) {
+					//按钮1回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					layer.closeAll();
+				},
+				btn2: function (index, layero) {
+					//按钮2回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					return false //开启该代码可禁止点击该按钮关闭
+				}
+			});
+		})
+
+
+		//弹窗13
+		$("#popup13").click(function () {
+			//页面层
+			layer.open({
+				type: 1,
+				title: '修改收货信息', //title设置
+				skin: 'layui-layer-rim', //加上边框
+				area: ['520px', '420px'], //宽高
+				btn: ['确 定', '取 消'], //btn按钮
+				content: "<form class='layui-form' action=''>" +
+					"<div class='layui-form-item input-layout-one'>" +
+					" <div class='cascader'>	<cascader id='demo3'></cascader></div>" +
+					"<div class='layui-input-block input-second-container lable-input-container'>" +
+					"<div class='input-second-container'>" +
+					"<input type='text' name='title' placeholder='请输入后台客服备注' autocomplete='off' class='layui-input'>" +
+					"<div class='input-number'><span class='input-on-number'>0</span>/<span class='input-max-number'>50" +
+					"</span></div></div>" +
+					"<div class='input-second-container'>" +
+					"<input type='text' name='title' placeholder='请输入后台客服备注' autocomplete='off' class='layui-input'>" +
+					"<div class='input-number'><span class='input-on-number'>0</span>/<span class='input-max-number'>50" +
+					"</span></div></div>" +
+					"<div class='input-second-container'>" +
+					"<input type='text' name='title' placeholder='请输入后台客服备注' autocomplete='off' class='layui-input'>" +
+					"<div class='input-number'><span class='input-on-number'>0</span>/<span class='input-max-number'>50" +
+					"</span></div></div>" +
+					"</form>", //内容
+				// shadeClose: true, //点击遮罩层隐藏弹窗
+				// move: false, //禁止拖拽
+				success: function (data) {
+					$(".layui-layer-page").addClass('popup13');
+					// 级联
+					$('cascader').each(function () {
+						var _id = '#' + $(this).attr('id');
+						ajaxCascaderTemplate(_id,
+							'https://open.gog.cn/appz/region/getRegion/', 'init');
+					})
+				},
+				yes: function (index, layero) {
+					//按钮1回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				},
+				btn2: function (index, layero) {
+					//按钮2回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					//return false 开启该代码可禁止点击该按钮关闭
+				}
+			});
+		})
+
+		//弹窗14
+		$("#popup14").click(function () {
+			layer.open({
+				type: 1,
+				title: '修改发票申请', //title设置
+				skin: 'layui-layer-rim', //加上边框
+				content: "<div class='popup14-content'>" +
+					"<div class='input-second-container'>" +
+					"<input type='text' name='title' placeholder='请输入物流单号' autocomplete='off' class='layui-input'>" +
+					"<div class='input-number'>" +
+					"<span class='input-on-number'>0</span>/" +
+					"<span class='input-max-number'>35" +
+					"</span>" +
+					"</div>" +
+					"</div>" +
+					"<div class='pic-one'>" +
+					"<div class='noPicture'>" +
+					"+尚未上传" +
+					"</div>" +
+					"</div>" +
+					"<p class='prompt-information'>请上传发票图片，无尺寸要求，文件大小5M以内，支持格式PNG、JPEG、JPG。</p>" +
+					"</div>",
+				btn: [' 通过发票申请', '取消'],
+				area: ['520px', '370px'], //宽高
+				success: function (data) {
+					$(".layui-layer-page").addClass('popup14');
+					$(".popup14 .layui-layer-title").show();
+					form.render();
+
+				},
+				yes: function (index, layero) {
+					//按钮1回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					// layer.closeAll();
+					layer.msg("sss")
+				},
+				btn2: function (index, layero) {
+					//按钮2回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					// return false //开启该代码可禁止点击该按钮关闭
+				}
+			});
+		})
+
+		//弹窗二维码
+		$("#popup15").click(function () {
+			layer.open({
+				type: 1,
+				shadeClose: true,
+				title: '修改发票申请', //title设置
+				skin: 'layui-layer-rim', //加上边框
+				content: "<div class='popup15-content'>" +
+					"<div class='pic-one'>" +
+					"<div class='noPicture'>" +
+					"+尚未上传" +
+					"</div>" +
+					"</div>" +
+					"<button type='button' class='layui-btn qrcode'>点击下载二维码</button>" +
+					"<div class='link-address'>" +
+					"<p class='txt3-color'>网页链接地址</p>" +
+					"<div style='padding-top:8px;'>" +
+					"<input type='text' name='layui' placeholder='' autocomplete='off' class='layui-input'>" +
+					"<button type='button' class='layui-btn open-links'>复 制</button>" +
+					"<button type='button' class='layui-btn open-links'>打 开</button>" +
+					"</div>" +
+					"<div style='padding-top:17px;'>" +
+					"<p class='txt3-color' style='padding-bottom:5px;'>自定义跳转参数（复制并填入自定义页面模块的跳转设置中）</p>" +
+					"<input type='text' name='title' placeholder='' autocomplete='off' class='layui-input'>" +
+					"<button type='button' class='layui-btn open-links'>复 制</button>" +
+					"</div>" +
+					"</div>" +
+					"</div>" +
+					"<div style=' clear: both;'></div>",
+				area: ['520px', '420px'], //宽高
+				success: function (data) {
+					$(".layui-layer-page").addClass('popup15');
+					$(".popup15 .layui-layer-title").hide();
+					form.render();
+				}
+			});
+		})
+
+		//弹窗16
+		$("#popup17").click(function () {
+			layer.open({
+				type: 1,
+				title: '导入 / 导出词库 <span style="font-size:12px;color:#999999;">修改敏感字段将会清空命中记录</span>', //title设置
+				skin: 'layui-layer-rim', //加上边框
+				content: "<div class='popup17-content'>" +
+					"<form class='layui-form' action=''>" +
+					"<div class='layui-form-item input-layout-one'>" +
+					"<label class='layui-form-label'><span class='tip'>*</span>敏感词：</label>" +
+					"<div class='layui-input-inline'>" +
+					"<div class='input-second-container'>" +
+					"<input type='text' name='title' placeholder='输入搜索关键字' autocomplete='off' class='layui-input'>" +
+					"<div class='input-number'><span class='input-on-number'>0</span>/<span class='input-max-number'>50" +
+					"</span>" +
+					"</div>" +
+					"</div>" +
+					"<p class='msg'>超出限制字数/已存在此敏感词</p>" +
+					"</div>" +
+					"</div>" +
+					"<div class='layui-form-item'>" +
+					"<label class='layui-form-label'><span class='tip'>*</span>程度：</label>" +
+					"<div class='layui-input-block txt3-color'>" +
+					"<input type='radio' name='sale_style' value='1' title='违禁（禁止提交）' checked>" +
+					"<input type='radio' name='sale_style' value='1' title='敏感（人工审核）'>" +
+					"<input type='radio' name='sale_style' value='1' title='正常（允许提交）'>" +
+					"</div>" +
+					"</div>" +
+					"<div class='layui-form-item input-layout-one' style='margin-bottom: 0px;padding-top: 15px;'>" +
+					"<label class='layui-form-label'><span class='tip'>*</span>敏感词：</label>" +
+					"<div class='layui-input-inline'>" +
+					"<div class='input-second-container' style='width:260px;'>" +
+					"<select name='city' lay-verify='required' class='select-sizeMin'>" +
+					"<option value=''>未选择</option>" +
+					"<option value='0'>1</option>" +
+					"<option value='1'>2</option>" +
+					"</select>" +
+					"</div>" +
+					"</div>" +
+					"</div>" +
+					"</form>" +
+					"</div>",
+				btn: [' 确定', '取消'],
+				area: ['600px', '376px'], //宽高
+				success: function (data) {
+					$(".layui-layer-page").addClass('popup17');
+					$(".popup16 .layui-layer-title").show();
+					$(".popup17 .layui-layer-setwin").show();
+					form.render();
+
+
+
+
+
+				},
+				yes: function (index, layero) {
+					//按钮1回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					// layer.closeAll();
+					layer.msg("sss")
+				},
+				btn2: function (index, layero) {
+					//按钮2回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					// return false //开启该代码可禁止点击该按钮关闭
+				}
+			});
+		})
+
+
+
+
+
+
 	})
 
 	//设置标签iframe高度
@@ -1212,6 +2059,7 @@
 
 	// 搜索
 	searchTemplate()
+
 	// 级联
 	$('cascader').each(function () {
 		var _id = '#' + $(this).attr('id');
@@ -1233,8 +2081,6 @@
 	function setIframeDataId(id) {
 		dataId = id;
 	}
-
-
 
 	//设置iframe高度
 	function setIframeHeight(height, type, hight_sign) {
@@ -1258,6 +2104,12 @@
 		}
 	}
 
+	// 左侧导航锚点
+	$('#anchor a').on('click', function () {
+		$('#anchor a').removeClass('active');
+		$(this).addClass('active');
+	})
+
 	//数据表格图标事件
 	$('.tableIcon').hover(function () {
 		$(this).closest('.table').find('.tableIcon-content').css('display', 'block');
@@ -1273,6 +2125,7 @@
 			area: ['520px', '228px'], //宽高
 			// move: false, //禁止拖拽
 			success: function (layero, index) {
+				$(".layui-layer-page").addClass('popup1');
 				$('.layui-layer-title').text('将当前节目的序号修改为'); //title修改
 				$(".layui-layer-input").attr('placeholder', '默认文本') //input placeholder提示修改
 			},
@@ -1294,6 +2147,9 @@
 		layer.alert('确定要删除此节目吗？删除后将无法恢复。', {
 			btn: ['删 除', '取 消'],
 			area: ['430px', '228px'], //宽高
+			success: function () {
+				$(".layui-layer-dialog").addClass('popup2');
+			},
 			// move: false, //禁止拖拽
 			yes: function (index, layero) {
 				//按钮删除的回调
@@ -1319,9 +2175,9 @@
 			content: "<form class='layui-form' action=''>" +
 				"<div class='layui-form-item input-layout-one'>" +
 				"<label class='layui-form-label'>补偿金额： </label>" +
-				"<div class='layui-input-block input-second-container lable-input-container'>" +
+				"<div class='layui-input-block'>" +
 				"<div class='input-third-container input-one1-container'>" +
-				"<input type='text' name='pricing' placeholder='最多23.00' autocomplete='off' class='layui-input'>" +
+				"<input type='number' name='pricing' placeholder='最多23.00' autocomplete='off' class='layui-input'>" +
 				"<div class='input-before'>￥</div>" +
 				"</div>" +
 				"<p class='msg'>图书定价不可为空</p>" +
@@ -1329,9 +2185,9 @@
 				"</div>" +
 				"<div class='layui-form-item input-layout-one'>" +
 				"<label class='layui-form-label'>补偿原因： </label>" +
-				"<div class='layui-input-block input-second-container lable-input-container'>" +
+				"<div class='layui-input-block'>" +
 				"<div class='input-third-container input-one1-container'>" +
-				"<input type='text' name='pricing' placeholder='请输入补偿原因' autocomplete='off' class='layui-input'>" +
+				"<input type='text' name='reason' placeholder='请输入补偿原因' autocomplete='off' class='layui-input'>" +
 				"</div>" +
 				"</div>" +
 				"</div>" +
@@ -1440,12 +2296,14 @@
 	//弹窗7
 	$("#popup7").click(function () {
 		//询问框
-		layer.alert('正在操作取消商户授权，取消后此商户创建的代发商品将立即下架，进行 中的订单将继续执行。', {
+		layer.alert('<div class="main-color">正在操作取消商户授权，取消后此商户创建的代发商品将立即下架，进行 中的订单将继续执行。</div>', {
 			btn: ['取消授权', '取 消'],
+			title: "警告!!！",
 			area: ['430px', '228px'], //宽高
 			// move: false, //禁止拖拽
 			success: function (data) {
 				$(".layui-layer-dialog").addClass('popup7');
+				$(".popup7 .layui-layer-title").show();
 			},
 			yes: function (index, layero) {
 				//按钮删除的回调
@@ -1455,6 +2313,118 @@
 				//按钮取消的回调
 				// layer.close(index); //如果设定了yes回调，需进行手工关闭
 				//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+	})
+
+	//弹窗11
+	$("#popup11").click(function () {
+		//页面层
+		layer.open({
+			type: 1,
+			title: '修改运费', //title设置
+			skin: 'layui-layer-rim', //加上边框
+			area: ['520px', '239px'], //宽高
+			btn: ['确 定', '取 消'], //btn按钮
+			content: "<div class='input-six-container'>" +
+				"<input type='text' name='title' placeholder='输入搜索关键字' autocomplete='off' class='layui-input'>" +
+				"<div class='input-before'>￥</div>" +
+				"</div>", //内容
+			// shadeClose: true, //点击遮罩层隐藏弹窗
+			// move: false, //禁止拖拽
+			success: function (data) {
+				$(".layui-layer-page").addClass('popup11');
+			},
+			yes: function (index, layero) {
+				//按钮1回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+			},
+			btn2: function (index, layero) {
+				//按钮2回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+	})
+
+	//弹窗12
+	$("#popup12").click(function () {
+		//页面层
+		layer.open({
+			type: 1,
+			title: '修改客服备注', //title设置
+			skin: 'layui-layer-rim', //加上边框
+			area: ['520px', '239px'], //宽高
+			btn: ['确 定', '取 消'], //btn按钮
+			content: "<form class='layui-form' action=''>" +
+				"<div class='layui-form-item input-layout-one'>" +
+				"<div class='layui-input-block input-second-container lable-input-container'>" +
+				"<div class='input-second-container'>" +
+				"<input type='text' name='title' placeholder='请输入后台客服备注' autocomplete='off' class='layui-input'>" +
+				"<div class='input-number'><span class='input-on-number'>0</span>/<span class='input-max-number'>50" +
+				"</span></div></div>" +
+				"<p>仅后台可见</p>" +
+				"</form>", //内容
+			// shadeClose: true, //点击遮罩层隐藏弹窗
+			// move: false, //禁止拖拽
+			success: function (data) {
+				$(".layui-layer-page").addClass('popup12');
+			},
+			yes: function (index, layero) {
+				//按钮1回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+			},
+			btn2: function (index, layero) {
+				//按钮2回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+	})
+
+
+	//弹窗15
+	$("#popup16").click(function () {
+		layer.open({
+			type: 1,
+			title: '导入 / 导出词库', //title设置
+			skin: 'layui-layer-rim', //加上边框
+			content: "<div class='popup16-content'>" +
+				"<div class='import-thesaurus'>" +
+				"<div>" +
+				"<p>" +
+				"<svg class='icon' aria-hidden='true' style='font-size:24px;'>" +
+				"<use xlink:href='#iconicon_daoruciku'></use> </svg>" +
+				"</p>" +
+				"<p style='padding-top:10px;'>导入词库</p></div>" +
+				"</div>" +
+				"<div class='export-thesaurus'>" +
+				"<p>" +
+				"<svg class='icon' aria-hidden='true'  style='font-size:24px;'>" +
+				"<use xlink:href='#iconicon_daochuciku'></use> </svg>" +
+				"</p>" +
+				"<p style='padding-top:10px;'>导出词库</p></div>" +
+				"<div class='download-thesaurus-template'><a>下载词库模板</a></div>" +
+				"</div>",
+			btn: [' 确定', '取消'],
+			area: ['428px', '250px'], //宽高
+			success: function (data) {
+				$(".layui-layer-page").addClass('popup16');
+				$(".popup16 .layui-layer-title").show();
+				$(".popup16 .layui-layer-btn").hide();
+				$(".popup16 .layui-layer-setwin").show();
+				// form.render();
+			},
+			yes: function (index, layero) {
+				//按钮1回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				// layer.closeAll();
+				layer.msg("sss")
+			},
+			btn2: function (index, layero) {
+				//按钮2回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				// return false //开启该代码可禁止点击该按钮关闭
 			}
 		});
 	})
