@@ -1,0 +1,621 @@
+/*
+ *  作者: zby
+ *  创建时间：
+ *  描述：数据表格组件
+ */
+@charset "utf-8";
+
+.table .layui-table th {
+    font-size: 12px;
+    font-family: PingFang SC;
+    color: #666666;
+}
+
+.table .layui-table td {
+    font-size: 12px;
+    font-family: PingFang SC;
+    color: #333333;
+}
+
+.table .status:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    /* position: absolute; */
+    /* left: 20px; */
+    /* top: 50%; */
+    /* margin-top: -2px; */
+}
+
+.table .statusA:before {
+    content: '';
+    background: #54ACF0;
+}
+
+.table .statusB:before {
+    content: '';
+    background: #F0B354;
+}
+
+.table .statusC:before {
+    content: '';
+    background: #54ACF0;
+}
+
+.table .statusD:before {
+    content: '';
+    background: #999999;
+}
+
+.table .statusE:before {
+    content: '';
+    background: #F05654;
+}
+
+.table .tableTitle {
+    text-align: left;
+    white-space: nowrap;
+}
+
+.table .tableTitle .message {
+    width: 64%;
+    padding-left: 10px;
+    white-space: normal;
+}
+
+.textOverflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.textTwoOver {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.table .c6 {
+    color: #666666;
+}
+
+.table .c3 {
+    color: #333333;
+}
+
+.table .pt-10 {
+    padding-top: 5px;
+}
+
+.table .topArrow {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    font-size: 12px;
+    color: #999;
+    position: absolute;
+    top: -18px;
+}
+
+.table .bottomArrow {
+    font-size: 12px;
+    color: #999;
+    position: absolute;
+    top: -10px;
+}
+
+.table .bottomArrow.active.red,
+.table .topArrow.active.red {
+    color: #F05654;
+}
+
+.table .inline_block {
+    display: inline-block;
+    width: 10px;
+    height: 100%;
+    position: relative;
+}
+
+.tableIcon {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 35%;
+}
+
+.tableIcon-content {
+    position: absolute;
+    top: -100px;
+    right: 9px;
+    width: 280px;
+    z-index: 99;
+    display: none;
+}
+
+.tableIcon-block {
+    background-color: #FFF;
+    padding: 15px 20px;
+    color: #999;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+    z-index: 99;
+}
+
+.tableIcon-hover-arrow {
+    position: absolute;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 15px 0 15px;
+    border-color: #FFF transparent transparent transparent;
+}
+
+.table tfoot tr {
+    height: 60px;
+}
+
+/*flex布局*/
+.table .footFlex {
+    display: flex;
+    align-items: center;
+}
+
+.table .footFlex .fg {
+    flex-grow: 1;
+}
+
+.table .footFlex .footText {
+    padding-right: 60px;
+    font-size: 14px;
+}
+
+.table .footFlex .sum {
+    flex-shrink: 0;
+    font-size: 16px;
+    color: #F05654;
+}
+
+/*特殊布局*/
+.table .bgColorBlue {
+    background-color: #EEF7FD;
+}
+
+.table .marg-20 {
+    margin-right: 20px;
+}
+
+.table .marg-28 {
+    margin-right: 28px;
+}
+
+.table .marg-50 {
+    margin-right: 50px;
+}
+
+.table .padd-10 {
+    padding: 10px 0px;
+}
+
+.table .click-color {
+    color: #54ACF0;
+    cursor: pointer;
+}
+
+.table .blurs {
+    color: #999999;
+    font-size: 12px;
+}
+
+.table .goodNum {
+    display: flex;
+}
+
+.table .goodNum .goodPrice {
+    flex-grow: 1;
+}
+
+.table .goodNum .goodState {
+    color: #54ACF0;
+    flex-shrink: 0;
+}
+
+/*自定义table底部*/
+.table .teari {
+    text-align: right;
+}
+
+.table .teari .mgt-5 {
+    margin-top: 5px;
+}
+
+.table .teari .mgt-5 .w75 {
+    width: 75px;
+    text-align: left;
+}
+
+.table .teari .mgt-5 .w80 {
+    width: 80px;
+}
+
+.table .teari .col14 {
+    font-size: 14px;
+    color: #F05654;
+}
+
+
+
+/*
+  *	作者: ym
+  *	创建时间：2020/04/07
+  *	描述：数据表格组件/数据表格6
+  */
+.table6 {
+    min-width: 1366px;
+    padding: 20px;
+    margin: 20px 0px;
+    background-color: #ffff;
+}
+
+.table6 .layui-table tr:hover,
+.table7 .layui-table tr:hover {
+    background-color: #ffff;
+}
+
+.table6 .layui-table tr td,
+.table7 .layui-table tr td {
+    border: none;
+
+}
+
+.table6 .report-forms-time {
+    padding-left: 0px;
+}
+
+.table6 .report-forms-time span {
+    font-size: 14px;
+}
+
+.table6 .serial-number {
+    padding: 0px 28px;
+}
+
+.table6 .report-forms-particulars:hover {
+    background-color: #EEF7FD !important;
+}
+
+.table6 .report-forms-particulars td {
+    padding: 5px 15px;
+}
+
+.table6 .report-forms-particulars .last-month-balance,
+.table6 .report-forms-particulars .surplus-consumption,
+.table6 .report-forms-particulars .refund-of-balance,
+.table6 .report-forms-particulars .recharge-of-balance {
+    color: #54ACF0;
+}
+
+.table6 .report-forms-particulars .balance-this-month {
+    color: #F05654;
+}
+
+/*
+  *  作者: ym
+  *  创建时间：2020/04/07
+  *  描述：数据表格组件/数据表格7
+  */
+.table7 {
+    margin-top: 10px;
+    background: #fff;
+}
+
+.table7 .bgColorBlue {
+    background-color: #EEF7FD;
+    padding: 0px;
+    line-height: 32px;
+    padding-left: 10px;
+}
+
+.table7 .tableTitle {
+    position: relative;
+    overflow: unset;
+    clear: both;
+    display: inline-block;
+}
+
+.table7 tfoot td {
+    padding: 0px;
+    line-height: 32px;
+    padding-left: 10px;
+}
+
+.table7 tfoot tr {
+    height: 44px;
+}
+
+.table7 .tableTitle .pic-imgs {
+    display: inline-block;
+}
+
+.table7 .tableTitle .product-title {
+    width: 290px;
+}
+
+/* 单张图片 */
+.table7 .tableTitle .pic-img1 .pic-two,
+.table7 .tableTitle .pic-img1 .pic-two img {
+    width: 88px;
+    height: 88px;
+}
+
+
+.table7 .tableTitle .pic-img1 .product-title {
+    padding-left: 10px;
+}
+
+
+/* 2张图片 */
+.table7 .tableTitle .pic-img2 .pic-two,
+.table7 .tableTitle .pic-img2 .pic-two img {
+    width: 43px;
+    height: 88px;
+}
+
+.table7 .tableTitle .pic-img2 .pic-two:nth-child(1) {
+    padding-right: 2px;
+}
+
+.table7 .tableTitle .pic-img2 {
+    width: 43px;
+    height: 88px;
+}
+
+.table7 .tableTitle .pic-img2 .product-title {
+    padding-left: 10px;
+}
+
+.table7 .tableTitle .pic-img2 .float {
+    float: left;
+}
+
+
+/* 3张图片 */
+.table7 .tableTitle .pic-img3 .pic-two:nth-child(1),
+.table7 .tableTitle .pic-img3 .pic-two:nth-child(1) img {
+    width: 43px;
+    height: 88px;
+    padding-right: 2px;
+}
+
+.table7 .tableTitle .pic-img3 .pic-two:nth-child(2),
+.table7 .tableTitle .pic-img3 .pic-two:nth-child(2) img,
+.table7 .tableTitle .pic-img3 .pic-two:nth-child(3),
+.table7 .tableTitle .pic-img3 .pic-two:nth-child(3) img {
+    width: 43px;
+    height: 43px;
+}
+
+.table7 .tableTitle .pic-img3 .pic-two:nth-child(2) {
+    position: absolute;
+}
+
+.table7 .tableTitle .pic-img3 .pic-two:nth-child(3) {
+    position: absolute;
+    top: 52px;
+}
+
+.table7 .tableTitle .pic-img3 .pic-two:nth-child(3) img {
+    margin-top: 2px;
+}
+
+.table7 .tableTitle .pic-img3 .product-title {
+    padding-left: 52px;
+}
+
+.table7 .product-title .quantity-of-commodities span {
+    padding-left: 0px !important;
+}
+
+.table7 .tableTitle .pic-img3 .product-title:nth-child(2) .quantity-of-commodities,
+.table7 .tableTitle .pic-img3 .product-title:nth-child(3) .quantity-of-commodities {
+    display: none;
+}
+
+.table7 .tableTitle .pic-img3:nth-child(1) .quantity-of-commodities {
+    display: block !important;
+}
+
+.table7 .tableTitle .pic-img3 .quantity-of-commodities,
+.table7 .tableTitle .pic-img4 .quantity-of-commodities {
+    padding-top: 3px;
+}
+
+/* 4张图片 */
+.table7 .tableTitle .pic-img4 .pic-two,
+.table7 .tableTitle .pic-img4 .pic-two img {
+    width: 43px;
+    height: 43px;
+}
+
+.table7 .tableTitle .pic-img4 .pic-two {
+    padding-right: 2px;
+    padding-bottom: 2px;
+}
+
+.table7 .tableTitle .pic-img4 .product-title {
+    padding-top: 3px;
+    padding-left: 2px;
+}
+
+
+.table7 .tableTitle .pic-img4 .float {
+    float: left;
+}
+
+.table7 .tableTitle .pic-img4 .width {
+    width: 20%;
+}
+
+
+.table7 .tableTitle .pic-img5 .pic-two,
+.table7 .tableTitle .pic-img4 .product-title p {
+    display: none;
+}
+
+.table7 .tableTitle .pic-img5 .pic-two:nth-child(1),
+.table7 .tableTitle .pic-img5 .pic-two:nth-child(2),
+.table7 .tableTitle .pic-img5 .pic-two:nth-child(3),
+.table7 .tableTitle .pic-img5 .pic-two:nth-child(4) {
+    display: inline-block;
+}
+
+.table7 .tableTitle .pic-img4 .product-title p:nth-child(1),
+.table7 .tableTitle .pic-img4 .product-title p:nth-child(2),
+.table7 .tableTitle .pic-img4 .product-title p:nth-child(3),
+.table7 .tableTitle .pic-img4 .product-title .quantity-of-commodities {
+    display: block;
+}
+
+.product-title .textTwoOver {
+    width: 70%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+    padding-right: 20px;
+}
+
+
+.table7 .tableTitle .pic-two img {
+    object-fit: cover;
+}
+
+.table7 .product-title .textTwoOvers .producttitle {
+    padding-left: 0px;
+    width: 85%;
+    display: inline-block;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+
+.table7 .textTwoOvers {
+    width: 42%;
+    padding-bottom: 4px;
+}
+
+.table7 .amount-of-money {
+    color: #F05654;
+}
+
+.table7 .address {
+    color: #333333;
+}
+
+
+.table7 .state {
+    height: 70px;
+    color: #333333;
+    padding-top: 38px;
+}
+
+.table7 .operation {
+    float: right;
+}
+
+.table7 .operation a {
+    margin-left: 18px;
+}
+
+.table7 .layui-bg-blue {
+    background-color: #54ACF0 !important;
+    margin-right: 2px;
+}
+
+.table7 .deliver-goods {
+    margin-left: 0px !important;
+    margin-right: 15px;
+}
+
+.table7 td .layui-badge-rim {
+    background-color: transparent;
+    border-color: #54ACF0;
+    color: #54ACF0;
+    margin-right: 5px;
+}
+
+.table-centers .thead li {
+    float: left;
+}
+
+.table-centers .thead li:nth-child(1) {
+    width: 18%;
+}
+
+.table-centers .thead li:nth-child(2) {
+    width: 8%;
+}
+
+.table-centers .thead li:nth-child(3) {
+    width: 32%;
+}
+
+.table-centers .thead li:nth-child(4) {
+    width: 10%;
+}
+
+.table-centers .thead li:nth-child(5) {
+    width: 22%;
+}
+
+.table-centers .thead li:nth-child(6) {
+    width: 5%;
+}
+
+@media screen and (min-width: 1120px) and (max-width: 1366px) {
+    .table-centers .thead li:nth-child(1) {
+        width: 26%;
+    }
+
+    .table-centers .thead li:nth-child(2) {
+        width: 5%;
+    }
+
+    .table-centers .thead li:nth-child(3) {
+        width: 21%;
+    }
+
+    .table-centers .thead li:nth-child(5) {
+        width: 16%;
+    }
+
+    .table-centers .thead li:nth-child(4) {
+        width: 18%;
+    }
+
+    .table-centers .thead li:nth-child(6) {
+        width: 10%;
+    }
+
+    .table7 .tableTitle .pic-img4 .width {
+        width: 26%;
+    }
+
+    .table7 .tableTitle .product-title {
+        width: 220px;
+    }
+
+}
